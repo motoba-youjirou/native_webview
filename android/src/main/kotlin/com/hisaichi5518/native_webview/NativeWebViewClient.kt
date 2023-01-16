@@ -114,7 +114,7 @@ class NativeWebViewClient(private val channel: MethodChannel, private val option
                                 }
                                 // There isn't any way to load an URL for a frame that is not the main frame,
                                 // so call this only on main frame.
-                                view?.loadUrl(request.url.toString(), request.requestHeaders)
+//                                view?.loadUrl(request.url.toString(), request.requestHeaders)
                             }
                             else -> { }
                         }
@@ -126,7 +126,7 @@ class NativeWebViewClient(private val channel: MethodChannel, private val option
         )
         // There isn't any way to load an URL for a frame that is not the main frame,
         // so if the request is not for the main frame, the navigation is allowed.
-        return request.isForMainFrame
+        return false
     }
 
     override fun onUnhandledKeyEvent(view: WebView?, event: KeyEvent?) {}
